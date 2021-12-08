@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<body ng-app="myApp">
+<a href="#!home" target="_blank">Home</a>
+<a href="#!mumbai" target="_blank">Mumbai</a>
+<a href="#!news" target="_blank">News</a>
+<div ng-view></div>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/home", {
+        templateUrl : "https://stageorigin.mid-day.com/"
+    })
+    .when("/mumbai", {
+        templateUrl : "https://stageorigin.mid-day.com/mumbai/"
+    })
+    .when("/news", {
+        templateUrl : "https://stageorigin.mid-day.com/news/"
+    });
+});
+</script>
+</body>
+</html>
